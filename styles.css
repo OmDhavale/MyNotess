@@ -1,4 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #99a8ff;
+}
+header {
+    background-color: #0d006d;
+    padding: 10px 0;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+.name{
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
 #pdfframe{
     width: 80%;
     height: 975px;
+}
+ /* Dropdown container */
+ /* General button styling */
+button {
+    background-color: #61168d; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding */
+    margin: 5px; /* Spacing between buttons */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    position: relative; /* Position relative to contain the dropdown */
+    display: inline-block;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #9359c3; /* Darker green on hover */
+}
+
+/* Styling for the dropdown button */
+.dropdown button {
+    background-color: #008CBA; /* Blue background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for dropdown button */
+.dropdown button:hover {
+    background-color: #007bb5; /* Darker blue on hover */
+    
+}
+
+/* Styling for dropdown content */
+.dropdown-content {
+    display: none;
+    position:absolute;
+    background-color: #dca0ff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+/* Styling for each dropdown link */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Hover effect for dropdown links */
+.dropdown-content a:hover {
+    background-color: #e680ff; /* Light gray on hover */
+}
+
+/* Show dropdown menu on click */
+.dropdown-content.show {
+    display: block;
 }
