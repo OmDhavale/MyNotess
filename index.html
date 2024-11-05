@@ -3,53 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Notes</title>
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        // Function to create or update the iframe
-        function createOrUpdateIframe(pdfFile) {
-            let iframe = document.getElementById("dynamicIframe");
-            
-            // Check if iframe already exists
-            if (!iframe) {
-                // If not, create a new iframe
-                iframe = document.createElement("iframe");
-                iframe.id = "dynamicIframe";
-                iframe.style.width = "100%";
-                iframe.style.height = "600px";
-                document.getElementById("frameContainer").appendChild(iframe);
-            }
-            
-            // Update the iframe source
-            iframe.src = pdfFile;
-        }
-
-        function toggleDropdown() {
-            document.getElementById("dropdownMenu").classList.toggle("show");
-        }
-
-    </script>
-
+    <title>Sign In</title>
+    <link rel="stylesheet" href="stylesign.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">My DSGT Notes</div>
-            <div class="name">_By Om Dhavale</div>
-        </nav>
-    </header>
-    <div id="choices">
-        <!-- Buttons to open different PDFs -->
-        <button id="choicebuttons" onclick="createOrUpdateIframe('Functions_Dsgt_Mod1.pdf')">Functions-(Mod 1)</button>
-        <button id="choicebuttons" onclick="toggleDropdown()">Graphs</button>
-            <div id="dropdownMenu" class="dropdown-content">
-                <a href="#" onclick="createOrUpdateIframe('GraphsLec1-2_1.pdf')">Lec 1 & 2</a>
-                <a href="#" onclick="createOrUpdateIframe('pdfs/Functions_Dsgt_Mod3.pdf')">Lec 3</a>
-                <a href="#" onclick="createOrUpdateIframe('pdfs/Functions_Dsgt_Mod4.pdf')">Lec 4</a>
-            </div>
+    <div class="login-container">
+        <h2>Sign In</h2>
+        <form onsubmit="return validateLogin()">
+            <label for="username">Username</label>
+            <input type="text" id="username" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+            
+            <button type="submit">Login</button>
+            <p id="error-message" style="color: red; display: none;">Invalid username or password</p>
+        </form>
     </div>
-    <div id="frameContainer">
-        <!-- The iframe will be added here dynamically -->
-    </div>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Check if entered credentials match
+            if (username === 'OmDhavale' && password === 'Om@12sakec.Pass') {
+                // Redirect to index.html if credentials are correct
+                window.location.href = 'notes.html';
+                return false; // Prevent form submission
+            } else {
+                // Show error message if credentials are incorrect
+                document.getElementById('error-message').style.display = 'block';
+                return false; // Prevent form submission
+            }
+        }
+    </script>
 </body>
 </html>
